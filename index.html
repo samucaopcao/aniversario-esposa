@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Nossa História — Feliz Aniversário</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Jost:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="corkboard">
+  <div class="paper-grain"></div>
+
+  <!-- ===================== TELA: CAPA ===================== -->
+  <section id="tela-capa" class="tela ativa">
+    <div class="cartao capa">
+      <span class="selo">06/02/2008 &mdash; hoje</span>
+      <h1 class="titulo-script">Nossa <em>História</em></h1>
+      <p class="subtitulo" id="texto-boas-vindas">Feliz aniversário, <span id="nome-esposa-capa">Amor</span> 💛</p>
+      <p class="descricao-capa">Preparei um joguinho com pedacinhos da nossa história.
+        Cada pergunta certa acende um marco na nossa linha do tempo.</p>
+      <button class="botao-principal" id="btn-comecar">Começar nossa história</button>
+      <div class="linha-tempo-mini">
+        <div class="ponto-tempo" data-label="Namoro"><span>06/02/2008</span></div>
+        <div class="trilho"></div>
+        <div class="ponto-tempo" data-label="Casamento"><span>06/09/2015</span></div>
+        <div class="trilho"></div>
+        <div class="ponto-tempo" data-label="Hoje"><span>Hoje</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TELA: JOGO ===================== -->
+  <section id="tela-jogo" class="tela">
+    <header class="cabecalho-jogo">
+      <div class="progresso-wrap">
+        <div class="progresso-barra"><div class="progresso-preenchido" id="barra-progresso"></div></div>
+        <span class="progresso-texto" id="progresso-texto">Etapa 1 de 8</span>
+      </div>
+      <div class="pontuacao">💛 <span id="pontuacao-valor">0</span></div>
+    </header>
+
+    <div class="cartao pergunta-cartao" id="area-pergunta">
+      <!-- conteúdo das perguntas/minigames é injetado via JS -->
+    </div>
+
+    <div class="feedback" id="area-feedback"></div>
+  </section>
+
+  <!-- ===================== TELA: FINAL ===================== -->
+  <section id="tela-final" class="tela">
+    <div class="cartao final">
+      <span class="selo">Missão cumprida</span>
+      <h2 class="titulo-script">Você conhece <em>a gente</em> muito bem</h2>
+      <p class="placar-final">Você acertou <strong id="placar-final-valor">0</strong> de <strong id="placar-final-total">0</strong> — e o mais importante já tínhamos ganhado antes de começar.</p>
+
+      <!-- 🎬 vídeo automático -->
+      <div class="video-final-wrap" id="video-final-wrap">
+        <video id="video-final" class="video-final" playsinline controls></video>
+        <button class="botao-secundario" id="btn-pular-video" type="button">Pular vídeo →</button>
+      </div>
+
+      <!-- carta com efeito de máquina de escrever -->
+      <div class="carta-final" id="carta-final">
+        <p class="carta-texto"><span id="texto-carta-final"></span><span class="cursor-maquina" id="cursor-maquina"></span></p>
+        <p class="carta-assinatura" id="assinatura-carta"></p>
+      </div>
+
+      <!-- botão que revela a última pista -->
+      <button class="botao-principal" id="btn-revelar-pista" type="button" style="display:none;"> E por fim...</button>
+      <div class="pista-final" id="pista-final" style="display:none;">
+        <p class="pista-titulo">💛 Parabéns meu amor, muitos anos de vida e que Deus te abenções sempre!</p>
+        <p class="pista-texto" id="pista-texto"></p>
+      </div>
+
+      <button class="botao-principal" id="btn-reiniciar">Jogar de novo</button>
+    </div>
+  </section>
+
+  <div class="coracoes-flutuantes" id="coracoes-flutuantes"></div>
+</div>
+
+<canvas id="confete-canvas"></canvas>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
